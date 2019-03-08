@@ -1,7 +1,7 @@
 class MySpecialArrayUtils
 {
     //Reverses the elements of a single dimensional array in place.
-    public static int[] reverse(int[] arr)
+    public static void reverse(int[] arr)
     {
         int arrayLen = arr.length;
         for (int i = 0; i < (arrayLen / 2); i++)
@@ -10,8 +10,6 @@ class MySpecialArrayUtils
             arr[arrayLen - i - 1] = arr[i] ^ arr[arrayLen - i - 1];
             arr[i] = arr[i] ^ arr[arrayLen - i - 1];
         }
-
-        return arr;
     }
 
     //Finds sum of the even and the odd elements in an array
@@ -41,14 +39,14 @@ class MySpecialArrayUtils
 
         for (int i = 0; i < arrayLen; i++)
         {
-            average += arr[i] / arrayLen;
+            average += (double)arr[i] / arrayLen;
         }
 
         return average;
     }
 
     //Moves elements equal to value to the end of an array - in place
-    public static int[] moveValue(int[] arr, int val)
+    public static void moveValue(int[] arr, int val)
     {
         int arrayLen = arr.length;
 
@@ -74,8 +72,6 @@ class MySpecialArrayUtils
                 		}
             }
         }
-
-        return arr;
     }
 
     //Transpose an array
