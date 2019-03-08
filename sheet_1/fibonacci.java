@@ -1,12 +1,24 @@
+import java.math.BigInteger;
+
 class fibonacci
 {
-    public static long long fibonacci(int index)
+    public static BigInteger fibonacci(int index)
     {
-        if (index == 1 || index == 2)
-            return 1;
-        else if (index == 0)
-            return 0;
+        BigInteger i = new BigInteger("0");
+        BigInteger j = new BigInteger("1");
+
+        //Calculating fibonacci
+        for (int k = 0; k < index - 1; k++)
+        {
+            if (k % 2 == 0)
+                i = i.add(j);
+            else
+                j = j.add(i);
+        }
+
+        if (index % 2 == 0)
+            return i;
         else
-            return fibonacci(index - 1) + fibonacci(index - 2);
+            return j;
     }
 }
