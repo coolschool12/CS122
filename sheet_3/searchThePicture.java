@@ -116,16 +116,16 @@ class PlayersFinder implements IPlayersFinder
         int min = (int) player.get(0).getX();
         for (int i = 0; i < player.size(); i++)
         {
-            if (player.get(0).getX() < min)
-                min = (int) player.get(0).getX();
+            if (player.get(i).getX() < min)
+                min = (int) player.get(i).getX();
         }
 
         //Calculating max
         int max = (int) player.get(0).getX();
         for (int i = 0; i < player.size(); i++)
         {
-            if (player.get(0).getX() > max)
-                max = (int) player.get(0).getX();
+            if (player.get(i).getX() > max)
+                max = (int) player.get(i).getX();
         }
 
         return (max + 1 + min);
@@ -137,16 +137,16 @@ class PlayersFinder implements IPlayersFinder
         int min = (int) player.get(0).getY();
         for (int i = 0; i < player.size(); i++)
         {
-            if (player.get(0).getY() < min)
-                min = (int) player.get(0).getY();
+            if (player.get(i).getY() < min)
+                min = (int) player.get(i).getY();
         }
 
         //Calculating max
         int max = (int) player.get(0).getY();
         for (int i = 0; i < player.size(); i++)
         {
-            if (player.get(0).getY() > max)
-                max = (int) player.get(0).getY();
+            if (player.get(i).getY() > max)
+                max = (int) player.get(i).getY();
         }
 
         return (max + 1 + min);
