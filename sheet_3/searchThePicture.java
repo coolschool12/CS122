@@ -97,7 +97,7 @@ class PlayersFinder implements IPlayersFinder
         for (int i = 0; i < players.size(); i++)
         {
             if ((players.get(i).size() * 4)< threshold)
-                players.remove(i);
+                players.remove(i--);
         }
 
         //Calculating center for each player
