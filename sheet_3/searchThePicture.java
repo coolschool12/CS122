@@ -105,6 +105,7 @@ class PlayersFinder implements IPlayersFinder
         for (int i = 0; i < players.size(); i++)
         {
             Point temp = new Point(centerX(players.get(i)), centerY(players.get(i)));
+            ps.add(temp);
         }
         return ps;
     }
