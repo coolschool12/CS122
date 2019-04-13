@@ -46,6 +46,7 @@ class PlayersFinder implements IPlayersFinder
         return arr;
     }
 
+    //Returns a list of players found 
     ArrayList<java.awt.Point> players(ArrayList<Point> team, int threshold)
     {
         ArrayList<ArrayList<Point>> players = new ArrayList<ArrayList<Point>>();
@@ -107,9 +108,12 @@ class PlayersFinder implements IPlayersFinder
             Point temp = new Point(centerX(players.get(i)), centerY(players.get(i)));
             ps.add(temp);
         }
+                
+        ps = arrange(ps);
         return ps;
     }
 
+    //Finds center of player at X axis
     public static int centerX(ArrayList<Point> player)
     {
         //Calculating min
@@ -131,6 +135,7 @@ class PlayersFinder implements IPlayersFinder
         return (max + 1 + min);
     }
 
+    //Finds center of player at Y axis
     public static int centerY(ArrayList<Point> player)
     {
         //Calculating min
@@ -151,4 +156,27 @@ class PlayersFinder implements IPlayersFinder
 
         return (max + 1 + min);
     }
+    
+    //Arranges points according to their x and y co-ordinates
+    public static ArrayList<Point> arrange(ArrayList<Point> arr)
+    {
+        ArrayList<Point> temp = new ArrayList<Point>();
+        while (arr.size() != 0)
+        {
+            Point min = arr.get(0);
+            for(int i = 0; i < arr.size(); i++)
+            {
+                if (arr.get(i).getX() < min.getX())
+                    min = arr.get(i);
+                else if ((arr.get(i).getX() == min.getX()) && (arr.get(i).getY() < min.getY()))
+                    min = arr.get(i);
+            }
+
+            temp.add(min);
+            arr.remove(min);
+        }
+
+        return temp;
+    }
+
 }
