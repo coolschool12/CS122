@@ -23,7 +23,7 @@ class PlayersFinder implements IPlayersFinder
             {
                 if (photoArr[i][j] == teamC)
                 {
-                    Point temp = new Point(i, j);
+                    Point temp = new Point(j, i);
                     allTeam.add(temp);
                 }
             }
