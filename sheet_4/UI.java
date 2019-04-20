@@ -127,7 +127,7 @@ public class UI
 
     public static int choice()
     {
-        System.out.println("Please choose an action\n-----------------------");
+        System.out.println("\nPlease choose an action\n-----------------------");
         System.out.println("-----------------------\n1- Set a polynomial variable\n2- Print the value of a polynomial variable");
         System.out.println("3- Add two polynomials\n4- Subtract two polynomials");
         System.out.println("5- Multiply two polynomials\n6- Evaluate a polynomial at some point\n7- Clear a polynomial variable\n8- Exit");
