@@ -1,43 +1,107 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
-import java.utils.*;
+import java.util.*;
 
 public class UI
 {
     public static void main(String[] args)
     {
         int ch = UI.choice();
+        polySolver polyn = new polySolver();
 
         Scanner sc = new Scanner(System.in);
         if (ch == 1)
         {
             System.out.println("Insert the variable name: A, B or C");
-            sc = sc.next().charAt(0);
-            System.out.println("Insert polynomial terms: ");
-            
+            char c = sc.next().charAt(0);
+            System.out.println("Insert polynomial terms(): ");
+            String poly = sc.next();
+
+            char[] arr = poly.toCharArray();
+
         }
         else if (ch == 2)
         {
-
+            System.out.println("Insert the variable name: A, B or C");
+            char c = sc.next().charAt(0);
+            try {
+                polyn.print(c);
+            }
+            catch(RuntimeException e){
+                System.out.println("Invalid input.");
+            }
         }
         else if (ch == 3)
         {
-
+            System.out.println("Insert variable 1 name: A, B or C");
+            char c1 = sc.next().charAt(0);
+            System.out.println("Insert variable 2 name: A, B or C");
+            char c2 = sc.next().charAt(0);
+            int[][] res;
+            try{
+                res = polyn.add(c1, c2);
+                UI.printing(res);
+            }
+            catch(RuntimeException e){
+                System.out.println("Invalid input.");
+            }
         }
         else if (ch == 4)
         {
-
+            System.out.println("Insert variable 1 name: A, B or C");
+            char c1 = sc.next().charAt(0);
+            System.out.println("Insert variable 2 name: A, B or C");
+            char c2 = sc.next().charAt(0);
+            int[][] res;
+            try{
+                res = polyn.substract(c1, c2);
+                UI.printing(res);
+            }
+            catch(RuntimeException e){
+                System.out.println("Invalid input.");
+            }
         }
         else if (ch == 5)
         {
-
+            System.out.println("Insert variable 1 name: A, B or C");
+            char c1 = sc.next().charAt(0);
+            System.out.println("Insert variable 2 name: A, B or C");
+            char c2 = sc.next().charAt(0);
+            int[][] res;
+            try{
+                res = polyn.multiply(c1, c2);
+                UI.printing(res);
+            }
+            catch(RuntimeException e){
+                System.out.println("Invalid input.");
+            }
         }
         else if (ch == 6)
         {
+            System.out.println("Insert the variable name: A, B or C");
+            char c = sc.next().charAt(0);
+            System.out.println("Insert value: ");
+            int d = sc.nextInt();
 
+            try{
+                float f = polyn.evaluatePolynomial(c, d);
+                System.out.println("evaluation: "+f);
+            }
+            catch(RuntimeException e){
+                System.out.println("Invalid input.");
+            }
         }
         else if (ch == 7)
         {
+            System.out.println("Insert the variable name: A, B or C");
+            char c = sc.next().charAt(0);
 
+            try{
+                polyn.clearPolynomial(c);
+                System.out.println("Cleared");
+            }
+            catch(RuntimeException e){
+                System.out.println("Invalid input.");
+            }
         }
     }
 
@@ -48,9 +112,10 @@ public class UI
         System.out.println("3- Add two polynomials\n4- Subtract two polynomials");
         System.out.println("5- Multiply two polynomials\n6- Evaluate a polynomial at some point\n7- Clear a polynomial variable");
 
+        int choice;
         do{
             Scanner sc = new Scanner(System.in);
-            int choice = sc.nextInt();
+            choice = sc.nextInt();
 
             if (choice < 1 || choice > 7)
                 System.out.print("Invalid input.\nRe-enter: ");
@@ -59,5 +124,16 @@ public class UI
         return choice;
     }
 
+    public static void printing(int[][] terms)
+    {
+        String printed = "";
+        for (int i = 0; i < terms.length; i++)
+        {
+            printed += String.valueOf(terms[i][0]) + "x^" + String.valueOf(terms[i][1]) + " ";
+            if (i != terms.length -1)
+                printed += "+ ";
 
+        }
+        System.out.println(printed);
+    }
 }
