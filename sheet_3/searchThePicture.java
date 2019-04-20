@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.iceHockey.cs22;
+package eg.edu.alexu.csd.datastructure.iceHockey.cs31;
 import java.awt.*;
 import java.lang.Math;
 import java.util.ArrayList;
