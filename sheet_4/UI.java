@@ -13,11 +13,26 @@ public class UI
         {
             System.out.println("Insert the variable name: A, B or C");
             char c = sc.next().charAt(0);
-            System.out.println("Insert polynomial terms(): ");
-            String poly = sc.next();
-
-            char[] arr = poly.toCharArray();
-
+            System.out.println("Insert number of terms: ");
+            int a = sc.nextInt();
+            int[][] terms = new int[a][2];
+            System.out.println("Please enter each term when prompted (e.g. 1 2), integers and spaces only.");
+            for (int i = 0; i < a; i++)
+            {
+                System.out.print("Term "+i+": ");
+                int aa = sc.nextInt();
+                int bb = sc.nextInt();
+                
+                terms[i][0] = aa;
+                terms[i][1] = bb;
+            }
+            
+            try{
+                polyn.setPolynomial(c, terms);
+            }
+            catch (RuntimeException e) {
+                System.out.println("Invalid input.");
+            }
         }
         else if (ch == 2)
         {
