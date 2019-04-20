@@ -137,9 +137,9 @@ public class UI
             Scanner sc = new Scanner(System.in);
             choice = sc.nextInt();
 
-            if (choice < 1 || choice > 7)
+            if (choice < 1 || choice > 8)
                 System.out.print("Invalid input.\nRe-enter: ");
-        }while(choice < 1 || choice > 7);
+        }while(choice < 1 || choice > 8);
 
         return choice;
     }
