@@ -18,7 +18,7 @@ public interface IPolynomialSolver
     int[][] add(char poly1, char poly2);
 
     //Subtract two polynomials
-    int[][] subtract(char poly1, char poly2);
+    int[][] substract(char poly1, char poly2);
 
     //Multiply two polynomials
     int[][] multiply(char poly1, char poly2);
