@@ -44,18 +44,9 @@ public class polySolver implements IPolynomialSolver
         String printed = "";
         for (int i = 0; i < terms.length; i++)
         {
-            if (terms[i][0] >= 0 && terms[i][1] >= 0)
-                printed += ((char) (terms[i][0] + 48)) + "x^" + ((char) (terms[i][1] + 48)) + " ";
-            else if (terms[i][0] >= 0)
-                printed += ((char) (terms[i][0] + 48)) + "x^(-" + ((char) (-1 * terms[i][1] + 48)) + ") ";
-            else if (terms[i][1] >= 0)
-                printed += "(-" + ((char) (-1 * terms[i][0] + 48)) + ")x^" + ((char) (terms[i][1] + 48)) + " ";
-            else
-                printed += "(-" + ((char) (-1 * terms[i][0] + 48)) + ")x^(-" + ((char) (-1 * terms[i][1] + 48)) + ") ";
-
+            printed += String.valueOf(terms[i][0]) + "x^" + String.valueOf(terms[i][1]) + " ";
             if (i != terms.length -1)
                 printed += "+ ";
-
         }
         System.out.println(printed);
         return printed;
