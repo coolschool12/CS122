@@ -11,6 +11,11 @@ public class Stack implements IStack
 {
     node stack;
 
+    /**
+     * Removes the element at the top of stack and returns that element.
+     *
+     * @return top of stack element, or through exception if empty
+     */
     public Object pop()
     {
         //If stack is empty
@@ -23,6 +28,11 @@ public class Stack implements IStack
         return temp;
     }
 
+    /**
+     * Get the element at the top of stack without removing it from stack.
+     *
+     * @return top of stack element, or through exception if empty
+     */
     public Object peek()
     {
         //If stack is empty
@@ -32,6 +42,13 @@ public class Stack implements IStack
         return stack.element;
     }
 
+    /**
+     * Pushes an item onto the top of this stack.
+     *
+     * @param object
+     *
+    to insert
+     */
     public void push(Object element)
     {
         //Making a new node
@@ -43,6 +60,11 @@ public class Stack implements IStack
         stack = top;
     }
 
+    /**
+     * Tests if this stack is empty
+     *
+     * @return true if stack empty
+     */
     public boolean isEmpty()
     {
         if (stack == null)
@@ -51,6 +73,11 @@ public class Stack implements IStack
             return false;
     }
 
+    /**
+     * Returns the number of elements in the stack.
+     *
+     * @return number of elements in the stack
+     */
     public int size()
     {
         int counter = 0;

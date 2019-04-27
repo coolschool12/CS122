@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class testClass
 {
+    /**
+     * Main method
+     *
+     * @param args
+     */
     public static void main(String[] args)
     {
         Stack trial = new Stack();
@@ -50,7 +55,12 @@ public class testClass
         }while (choice != 7);
     }
 
-    //Prints stack contents
+    /**
+     * Prints stack contents
+     *
+     * @param stk
+     *          stack to be printed
+     */
     public static void printStack(Stack stk)
     {
         node temp = stk.stack;
@@ -64,7 +74,11 @@ public class testClass
         System.out.println();
     }
 
-    //User interface
+    /**
+     * User interface
+     *
+     * @return user choice
+     */
     public static int UI()
     {
         System.out.println("\nPlease choose an option: ");

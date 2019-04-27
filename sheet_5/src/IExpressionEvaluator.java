@@ -9,8 +9,7 @@ public interface IExpressionEvaluator
      * length of the term (e.g., two digits symbolic or numeric term)
      *
      * @param expression
-     *
-    infix expression
+     *          infix expression
      * @return postfix expression
      */
     public String infixToPostfix(String expression);
@@ -18,8 +17,7 @@ public interface IExpressionEvaluator
      * Evaluate a postfix numeric expression, with a single space separator
      *
      * @param expression
-     *
-    postfix expression
+     *          postfix expression
      * @return the expression evaluated value
      */
     public int evaluate(String expression);

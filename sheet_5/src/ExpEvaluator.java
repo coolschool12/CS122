@@ -3,7 +3,13 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 //Expression evaluator class
 public class ExpEvaluator implements IExpressionEvaluator
 {
-    //Checks if a character is an operator
+    /**
+     * Checks if a character is an operator
+     *
+     * @param ch
+     *          character to be checked
+     * @return true or false.
+     */
     public static boolean isOperator(char ch)
     {
         char[] ops = {'+', '-', '/', '*', '('};
@@ -16,7 +22,15 @@ public class ExpEvaluator implements IExpressionEvaluator
         return false;
     }
 
-    //Returns true if ch1 has higher precedence than ch2
+    /**
+     * Returns true if ch1 has higher precedence than ch2
+     *
+     * @param ch1
+     *          first character
+     * @param ch2
+     *          second character
+     * @return true or false based on precedence
+     */
     public static boolean doesPrecede(char ch1, char ch2)
     {
         if (ch2 == '(')
@@ -32,6 +46,15 @@ public class ExpEvaluator implements IExpressionEvaluator
             return false;
     }
 
+    /**
+     * Takes a symbolic/numeric infix expression as input and converts it to
+     * postfix notation. There is no assumption on spaces between terms or the
+     * length of the term (e.g., two digits symbolic or numeric term)
+     *
+     * @param expression
+     *          infix expression
+     * @return postfix expression
+     */
     public String infixToPostfix(String expression)
     {
         char[] exp = expression.toCharArray();
@@ -77,6 +100,13 @@ public class ExpEvaluator implements IExpressionEvaluator
         return postfix;
     }
 
+    /**
+     * Evaluate a postfix numeric expression, with a single space separator
+     *
+     * @param expression
+     *          postfix expression
+     * @return the expression evaluated value
+     */
     public int evaluate(String expression)
     {
         char[] exp = expression.toCharArray();
@@ -128,10 +158,19 @@ public class ExpEvaluator implements IExpressionEvaluator
                 //Pushing result to the stack
                 result.push(res);
             }
+            else if (Character.isLetter(exp[i]))
+            {
+                System.out.println("Character " + exp[i] + "without a value.");
+                return 0;
+            }
         }
 
         if (result.size() != 1)
-            throw new RuntimeException();
+        {
+            System.out.println("Given input was invalid.");
+            return 0;
+
+        }
 
         return (int) result.pop();
     }

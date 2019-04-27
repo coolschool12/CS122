@@ -1,6 +1,5 @@
 package eg.edu.alexu.csd.datastructure.stack.cs31;
 
-//Stack interface
 public interface IStack {
     /**
      * Removes the element at the top of stack and returns that element.
