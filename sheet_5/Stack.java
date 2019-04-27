@@ -1,3 +1,5 @@
+package eg.edu.alexu.csd.datastructure.stack.cs31;
+
 //Stack linked list implementation
 class node
 {

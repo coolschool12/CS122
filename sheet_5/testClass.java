@@ -1,4 +1,5 @@
 //Testing stack implementation
+package eg.edu.alexu.csd.datastructure.stack.cs31;
 import java.util.Scanner;
 
 public class testClass
